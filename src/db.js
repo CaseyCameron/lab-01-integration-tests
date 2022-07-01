@@ -12,7 +12,7 @@ export const getUserByUsername = async (username) => {
       useUnifiedTopology: true,
     },
   );
-  
+
   const db = client.db(`${DB_NAME}`);
   
   const result = await db.collection('users').findOne({ username });
@@ -21,3 +21,7 @@ export const getUserByUsername = async (username) => {
 
   return result;
 }
+
+export default {
+  getUserByUsername,
+};
